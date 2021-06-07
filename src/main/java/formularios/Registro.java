@@ -4,6 +4,10 @@
  * and open the template in the editor.
  */
 package formularios;
+import javax.swing.JTextField;
+import javax.swing.GroupLayout.Alignment;
+import javax.swing.GroupLayout;
+import javax.swing.LayoutStyle.ComponentPlacement;
 
 /**
  *
@@ -37,8 +41,6 @@ public class Registro extends javax.swing.JFrame {
         campoTexto2 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        areaUsuario = new javax.swing.JTextArea();
 
         jTextField1.setBackground(new java.awt.Color(255, 255, 255));
         jTextField1.setForeground(new java.awt.Color(0, 0, 0));
@@ -92,37 +94,48 @@ public class Registro extends javax.swing.JFrame {
                 .addComponent(jLabel2)
                 .addContainerGap())
         );
-
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
-
-        areaUsuario.setColumns(20);
-        areaUsuario.setRows(4);
-        areaUsuario.setToolTipText("nombre de usuario");
-        jScrollPane1.setViewportView(areaUsuario);
+        
+        txtIntroduzcaSuNombre = new JTextField();
+        txtIntroduzcaSuNombre.setText("Introduzca su nombre:");
+        txtIntroduzcaSuNombre.setColumns(10);
+        txtIntroduzcaSuNombre.setBorder(null);
+        
+        txtIntroduzcaSusApellidos = new JTextField();
+        txtIntroduzcaSusApellidos.setText("Introduzca sus apellidos:");
+        txtIntroduzcaSusApellidos.setColumns(10);
+        txtIntroduzcaSusApellidos.setBorder(null);
+        
+        textIntroduzcaUsuario = new JTextField();
+        textIntroduzcaUsuario.setText("Introduzca nombre de usuario:");
+        textIntroduzcaUsuario.setColumns(10);
+        textIntroduzcaUsuario.setBorder(null);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
-            .addGroup(layout.createSequentialGroup()
-                .addGap(182, 182, 182)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addGroup(layout.createParallelGroup(Alignment.LEADING)
+        				.addComponent(txtIntroduzcaSuNombre, GroupLayout.PREFERRED_SIZE, 146, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(jPanel2, GroupLayout.DEFAULT_SIZE, GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+        				.addComponent(txtIntroduzcaSusApellidos, GroupLayout.PREFERRED_SIZE, 164, GroupLayout.PREFERRED_SIZE)
+        				.addComponent(textIntroduzcaUsuario, GroupLayout.PREFERRED_SIZE, 204, GroupLayout.PREFERRED_SIZE))
+        			.addContainerGap())
         );
         layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(488, Short.MAX_VALUE))
+        	layout.createParallelGroup(Alignment.LEADING)
+        		.addGroup(layout.createSequentialGroup()
+        			.addContainerGap()
+        			.addComponent(jPanel2, GroupLayout.PREFERRED_SIZE, GroupLayout.DEFAULT_SIZE, GroupLayout.PREFERRED_SIZE)
+        			.addGap(18)
+        			.addComponent(txtIntroduzcaSuNombre, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(txtIntroduzcaSusApellidos, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+        			.addPreferredGap(ComponentPlacement.RELATED)
+        			.addComponent(textIntroduzcaUsuario, GroupLayout.PREFERRED_SIZE, 28, GroupLayout.PREFERRED_SIZE)
+        			.addContainerGap(425, Short.MAX_VALUE))
         );
+        getContentPane().setLayout(layout);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -161,15 +174,13 @@ public class Registro extends javax.swing.JFrame {
             }
         });
     }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextArea areaUsuario;
     private javax.swing.JLabel campoTexto2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel1campoTexto1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
-    // End of variables declaration//GEN-END:variables
+    private JTextField txtIntroduzcaSuNombre;
+    private JTextField txtIntroduzcaSusApellidos;
+    private JTextField textIntroduzcaUsuario;
 }
