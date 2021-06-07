@@ -20,7 +20,7 @@ public class Pedido implements Serializable {
 	private int codPedido;
 
 	//bi-directional many-to-one association to Usuario
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
 	@JoinColumn(name="codUsuario", insertable=false, updatable=false)
 	private Usuario usuario;
 

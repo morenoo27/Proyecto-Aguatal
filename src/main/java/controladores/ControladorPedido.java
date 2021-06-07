@@ -165,7 +165,7 @@ public class ControladorPedido {
 		
 		cd.insertDis(d1);
 		
-		Dispensadora dispensadora = cd.findAll().stream().collect(Collectors.toCollection(ArrayList::new)).get(0);
+		Dispensadora dispensadora = cd.findByPK(1);
 		
 		p.setDispensadora(dispensadora);
 		cp.insertPed(p);
